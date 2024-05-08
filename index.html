@@ -8,22 +8,19 @@
     <title>沉浸式湖南红色景点网</title>
     <link rel="icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="javascript.js"></script>
 </head>
 
 <body>
     <div class="box">
         
-
-
         <div class="nav">
             <div class="w">
-
-                <img src="images/" alt="">
-
                 <ul>
                     <li><a href="Index.html">首页</a></li>
-                    <li><a href="tm.html">红色潇湘</a></li>
-                    <li><a href="wan.html">沉浸潇湘</a></li>
+                    <li><a href="tm.html">了解潇湘</a></li>
+                    <li><a href="wan.html">全景潇湘</a></li>
                     <li><a href="hd.html">活动资讯</a></li>
                 </ul>
 
@@ -35,7 +32,21 @@
         </div>
 
         <div class="banner">
-            <img src="images/第一师范.png" alt="">
+            <!--无序列表承载轮播的图片-->
+            <ul class="img">
+                <li><a href="#"><img src="images/委员会旧址.png" alt="第4张图片"></a></li>
+                <li><a href="#"><img src="images/故居秋韵.jpg" alt="第5张图片"></a></li>
+                <li><a href="#"><img src="images/第一师范.png" alt="第1张图片"></a></li>
+                <li><a href="#"><img src="images/雷锋纪念馆.jpg" alt="第2张图片"></a></li>
+            </ul>
+
+            <!--用来放置圆点具体实施在js代码中呈现-->
+            <ul class="num"></ul>
+            <!--左右点击按钮-->
+            <div class="btn">
+                <span class="prev"><</span>
+                <span class="next">></span>
+            </div>
         </div>
 
         <div class="content">
@@ -51,11 +62,11 @@
                             <p>长沙市</p>
                         </li>
                         <li>
-                            <img src="images/湘潭毛泽东故居.png" alt="">
+                            <img src="images/湘潭故居.png" alt="">
                             <p>湘潭市 </p>
                         </li>
                         <li>
-                            <img src="images/株洲神农塔.png" alt="">
+                            <img src="images/神农塔.png" alt="">
                             <p>株洲市</p>
                         </li>
                         <li>
@@ -70,33 +81,34 @@
                     <h1><b>玩在红色潇湘</b></h1>
                     <ul>
                         <li>
-                            <img src="images/5.jpg" alt="">
+                            <img src="images/1.png" alt="">
                             <p>景区景点</p>
                         </li>
                         <li>
-                            <img src="images/6.jpg" alt="">
+                            <img src="images/2.png" alt="">
                             <p>特色美食</p>
                         </li>
                         <li>
-                            <img src="images/7.jpg" alt="">
+                            <img src="images/3.png" alt="">
                             <p>酒店住宿</p>
                         </li>
                         <li>
-                            <img src="images/8.jpg" alt="">
+                            <img src="images/4.png" alt="">
                             <p>特产购物</p>
                         </li>
                         <li>
-                            <img src="images/9.jpg" alt="">
+                            <img src="images/5.png" alt="">
                             <p>娱乐休闲</p>
                         </li>
                         <li>
-                            <img src="images/10.jpg" alt="">
+                            <img src="images/6.png" alt="">
                             <p>风俗节庆</p>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
+
         <div class="bottom">
             <p><b>沉浸式湖南红色景点网</b></p>
         </div>
