@@ -8,6 +8,8 @@
     <title>沉浸式湖南红色景点网</title>
     <link rel="icon" href="./images/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="javascript.js"></script>
 </head>
 
 <body>
@@ -21,51 +23,133 @@
                     <li><a href="wan.html">全景潇湘</a></li>
                     <li><a href="hd.html">活动资讯</a></li>
                 </ul>
-                
+
                 <div class="search">
                     <input type="search" placeholder="搜索"> <button>搜索</button>
                 </div>
             </div>
         </div>
 
+        <div class="banner">
+            <!--无序列表承载轮播的图片-->
+            <ul class="img">
+                <li><a href="#"><img src="images/委员会旧址.png" alt="第4张图片"></a></li>
+                <li><a href="#"><img src="images/故居秋韵.jpg" alt="第5张图片"></a></li>
+                <li><a href="#"><img src="images/第一师范.png" alt="第1张图片湖南第一师范学院"></a></li>
+                <li><a href="#"><img src="images/雷锋纪念馆.jpg" alt="第2张图片"></a></li>
+            </ul>
+            <!--用来放置圆点具体实施在js代码中呈现-->
+            <ul class="num"></ul>
+            <!--左右点击按钮-->
+            <div class="btn">
+                <span class="prev"><</span>
+                <span class="next">></span>
+            </div>
+        </div>
+
         <div class="content">
             <div class="w">
-                <div class="c4">
-                    <h1><b>湖南红色景点推荐</b></h1>
+                <div class="c1">
+                    <h1><b>湖南红色景点分布</b></h1>
                     <ul>
-                        <a href="http://ser064258434280.gptapp.ren/">
-                            <li>
-                                <img src="images/雷锋纪念馆.jpg" alt="">
-                                <div>雷锋纪念馆</div>
-                            </li>
-                        </a>
-                        
                         <li>
-                            <img src="images/第一师范.png" alt="">
-                            <div>湖南第一师范学院（城南校区）</div>
+                            <a href="cs.html">
+                                <img src="images/橘子洲.png" alt="">
+                                <p>长沙市</p>
+                            </a>
+                            
                         </li>
                         <li>
-                            <img src="images/故居秋韵.jpg" alt="">
-                            <div>韶山毛泽东同志纪念馆（故居）</div>
-                        </li>
-                        
-                        <li>
-                            <img src="images/标语博物馆.jpg" alt="">
-                            <div>红色标语博物馆</div>
+                            <a href="xt.html">
+                                <img src="images/湘潭故居.png" alt="">
+                                <p>湘潭市 </p>
+                            </a>
+                            
                         </li>
                         <li>
-                            <img src="images/委员会旧址.png" alt="">
-                            <div>中共湘区委员会旧址</div>
+                            <img src="images/神农塔.png" alt="">
+                            <p>株洲市</p>
                         </li>
                         <li>
-                            <img src="images/第一军规广场.jpg" alt="">
-                            <div>《三大纪律，六项注意》颁布旧址</div>
+                            <img src="images/岳阳楼.png" alt="">
+                            <p>岳阳市</p>
+                        </li>
+                        <li>
+                            <img src="images/张家界.png" alt="张家界">
+                            <p>张家界市</p>
+                        </li>
+                        <li>
+                            <img src="images/衡阳.png" alt="衡阳">
+                            <p>衡阳市</p>
+                        </li>
+                        <li>
+                            <img src="images/郴州.png" alt="郴州">
+                            <p>郴州市</p>
+                        </li>
+                        <li>
+                            <img src="images/怀化.png" alt="怀化">
+                            <p>怀化市</p>
+                        </li>
+                        <li>
+                            <img src="images/常德.png" alt="常德">
+                            <p>常德市</p>
+                        </li>
+                        <li>
+                            <img src="images/娄底.png" alt="娄底">
+                            <p>娄底市</p>
+                        </li>
+                        <li>
+                            <img src="images/邵阳.png" alt="邵阳">
+                            <p>邵阳市</p>
+                        </li>
+                        <li>
+                            <img src="images/永州.png" alt="永州">
+                            <p>永州市</p>
+                        </li>
+                        <li>
+                            <img src="images/益阳.png" alt="益阳">
+                            <p>益阳市</p>
+                        </li>
+                        <li>
+                            <img src="images/湘西.png" alt="湘西">
+                            <p>湘西土家族苗族自治州</p>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="c2">
+                    <h1><b>玩在红色潇湘</b></h1>
+                    <ul>
+                        <li>
+                            <img src="images/1.png" alt="">
+                            <p>景区景点</p>
+                        </li>
+                        <li>
+                            <img src="images/2.png" alt="">
+                            <p>特色美食</p>
+                        </li>
+                        <li>
+                            <img src="images/3.png" alt="">
+                            <p>酒店住宿</p>
+                        </li>
+                        <li>
+                            <img src="images/4.png" alt="">
+                            <p>特产购物</p>
+                        </li>
+                        <li>
+                            <img src="images/5.png" alt="">
+                            <p>娱乐休闲</p>
+                        </li>
+                        <li>
+                            <img src="images/6.png" alt="">
+                            <p>风俗节庆</p>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-        
+
         <div class="bottom">
             <p><b>沉浸式湖南红色景点网</b></p>
         </div>
