@@ -120,25 +120,11 @@ li {
 .nav img {
     float: left;
     margin-top: 6px;
-    margin-right: 30px;
+    margin-right: 100px;
     width: 50px;
     animation: move 2s linear infinite;
 }
-@keyframes move {
-    25% {
-        transform: translateY(-4px);
-    }
 
-    50%,
-    100% {
-        transform: translateY(0);
-    }
-
-    75% {
-        transform: translateY(4px);
-    }
-
-}
 .nav ul {
     float: left;
 
@@ -184,9 +170,6 @@ li {
 }
 
 
-
-
-
 /*版心部分*/
 .content {
     padding: 15px 0;
@@ -199,59 +182,81 @@ li {
     font-weight: normal;
 }
 
-
-/*版心第一块内容*/
+/* 版心第一块内容 */
 .c1 {
     width: 100%;
     overflow: hidden;
+    margin-bottom: 40px; /* 添加下边距以确保和第二部分有间隔 */
 }
 .c1 ul {
-    width: 1180px;
+    width: 100%;
+    max-width: 1180px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+    justify-content: space-evenly; /* 确保项目间距 */
 }
 .c1 li {
-    float: left;
     width: 270px;
     text-align: center;
     line-height: 60px;
-    margin-right: 30px;
     margin-bottom: 20px;
+    box-sizing: border-box;
+    margin-right: 20px; /* 设置右边距 */
 }
-.c1 li:last-child,
-.c2 li:last-child {
-    margin-right: 0;
+.c1 li:nth-child(4n) {
+    margin-right: 0; /* 每行最后一个元素没有右边距 */
+}
+.c1 li:last-child {
+    margin-right: 0; /* 最后一个元素没有右边距 */
 }
 .c1 li img {
     display: block;
-    width: 270px;
+    width: 100%;
     height: 300px;
+    object-fit: cover;
 }
 .c1 li:hover {
     box-shadow: 0px 0px 10px 3px #b7121a;
     cursor: pointer;
 }
 
-
-/*版心第二块内容*/
+/* 版心第二块内容 */
 .c2 {
     width: 100%;
     overflow: hidden;
 }
+.c2 ul {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+    justify-content: space-evenly; /* 确保项目间距 */
+}
 .c2 li {
-    float: left;
     width: 154px;
-    margin: 22px;
+    margin-bottom: 20px; /* 设置下边距 */
     line-height: 40px;
     text-align: center;
     cursor: pointer;
+    box-sizing: border-box;
+    margin-right: 20px; /* 设置右边距 */
+}
+.c2 li:last-child {
+    margin-right: 0; /* 最后一个元素没有右边距 */
 }
 .c2 img {
+    width: 100%;
     transition: all .5s;
 }
 .c2 li:hover img {
     transform: scale(1.1);
 }
-
 
 /*底部框*/
 .bottom {
@@ -353,3 +358,18 @@ li {
     text-indent: 2em;
 }
 
+.c6{
+    width: 100%;
+    overflow: hidden;
+}
+.c6 p {
+    line-height: 60px;
+    text-indent: 2em;
+}
+.c6 .ir {
+    float: right;
+    width:800px;
+    height: 500px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
