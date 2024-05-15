@@ -1,159 +1,316 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>沉浸式湖南红色景点网</title>
-    <link rel="icon" href="./images/favicon.ico">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="jquery-1.11.3.min.js"></script>
-    <script src="javascript.js"></script>
+    <title>沉浸式湖南景点网</title>
+    <link rel="stylesheet" href="pannellum/src/css/pannellum.css"/>
+    <script type="text/javascript" src="pannellum/src/js/libpannellum.js"></script>
+    <script type="text/javascript" src="pannellum/src/js/pannellum.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            position: relative; /* 添加这行以便在绝对定位时基于 body 定位 */
+        }
+
+        #panorama {
+            width: 100%;
+            height: 100vh;
+        }
+
+        #miniMap {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #000;
+        }
+
+        #miniMapImage {
+            width: 100%;
+            height: 100%;
+        }
+
+        #backToScene1 {
+            position: absolute;
+            top: 20px; /* 距离顶部距离 */
+            left: 1000px; /* 距离左侧距离 */
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
-    <div class="box">
-        <div class="nav">
-            <div class="w">
-                <img src="" alt="">
-                <ul>
-                    <li><a href="index.html">首页</a></li>
-                    <li><a href="tm.html">了解潇湘</a></li>
-                    <li><a href="wan.html">全景潇湘</a></li>
-                    <li><a href="hd.html">活动资讯</a></li>
-                </ul>
 
-                <div class="search">
-                    <input type="search" placeholder="搜索"> <button>搜索</button>
-                </div>
-            </div>
-        </div>
+<div id="panorama"></div>
 
-        <div class="banner">
-            <!--无序列表承载轮播的图片-->
-            <ul class="img">
-                <li><a href="#"><img src="images/委员会旧址.png" alt="第4张图片"></a></li>
-                <li><a href="#"><img src="images/故居秋韵.jpg" alt="第5张图片"></a></li>
-                <li><a href="#"><img src="https://pic.imgdb.cn/item/663c1e620ea9cb1403a93d1a.png" alt="第1张图片湖南第一师范学院"></a></li>
-                <li><a href="#"><img src="images/雷锋纪念馆.jpg" alt="第2张图片"></a></li>
-            </ul>
-            <!--用来放置圆点具体实施在js代码中呈现-->
-            <ul class="num"></ul>
-            <!--左右点击按钮-->
-            <div class="btn">
-                <span class="prev"><</span>
-                <span class="next">></span>
-            </div>
-        </div>
+<div id="miniMap">
+    <img id="miniMapImage" src="https://s2.loli.net/2024/03/27/Fsxc9NEBj7rHkmX.png">
+</div>
 
-        <div class="content">
-            <div class="w">
-                <div class="c1">
-                    <h1><b>湖南红色景点分布</b></h1>
-                    <ul>
-                        <li>
-                            <a href="cs.html">
-                                <img src="images/橘子洲.png" alt="">
-                                <p>长沙市</p>
-                            </a>
-                            
-                        </li>
-                        <li>
-                            <a href="xt.html">
-                                <img src="images/湘潭故居.png" alt="">
-                                <p>湘潭市 </p>
-                            </a>
-                            
-                        </li>
-                        <li>
-                            <img src="images/神农塔.png" alt="">
-                            <p>株洲市</p>
-                        </li>
-                        <li>
-                            <img src="images/岳阳楼.png" alt="">
-                            <p>岳阳市</p>
-                        </li>
-                        <li>
-                            <img src="images/张家界.png" alt="张家界">
-                            <p>张家界市</p>
-                        </li>
-                        <li>
-                            <img src="images/衡阳.png" alt="衡阳">
-                            <p>衡阳市</p>
-                        </li>
-                        <li>
-                            <img src="images/郴州.png" alt="郴州">
-                            <p>郴州市</p>
-                        </li>
-                        <li>
-                            <img src="images/怀化.png" alt="怀化">
-                            <p>怀化市</p>
-                        </li>
-                        <li>
-                            <img src="images/常德.png" alt="常德">
-                            <p>常德市</p>
-                        </li>
-                        <li>
-                            <img src="images/娄底.png" alt="娄底">
-                            <p>娄底市</p>
-                        </li>
-                        <li>
-                            <img src="images/邵阳.png" alt="邵阳">
-                            <p>邵阳市</p>
-                        </li>
-                        <li>
-                            <img src="images/永州.png" alt="永州">
-                            <p>永州市</p>
-                        </li>
-                        <li>
-                            <img src="images/益阳.png" alt="益阳">
-                            <p>益阳市</p>
-                        </li>
-                        <li>
-                            <img src="images/湘西.png" alt="湘西">
-                            <p>湘西土家族苗族自治州</p>
-                        </li>
-                    </ul>
-                </div>
+<button id="backToScene1">回到场景一</button>
+
+<script>
+    var panorama1 = {
+        "title": "正兴广场",
+        "type": "equirectangular",
+        "panorama": "https://s2.loli.net/2024/03/27/ezSWq2Np1i6dcQ5.jpg",
+        "yaw": 190, // 定义初始视角的水平角度
+        "pitch": 0, // 定义初始视角的垂直角度
+        "hotSpots": [
+            {
+                "pitch": 0,
+                "yaw": 190,
+                "type": "scene",
+                "text": "前进",
+                "sceneId": "scene2"
+            }
+        ]
+    };
+
+    var panorama2 = {
+        "title": "游步道一",
+        "type": "equirectangular",
+        "panorama": "https://s2.loli.net/2024/03/27/TpSbtuUy6e7KCDL.jpg",
+        "hotSpots": [
+            {
+                "pitch": 2,
+                "yaw": 180,
+                "type": "scene",
+                "text": "正兴广场",
+                "sceneId": "scene1"
+            },
+            {
+                "pitch": -5,
+                "yaw": -15,
+                "type": "scene",
+                "text": "中央广场",
+                "sceneId": "scene4"
+            },
+        ]
+    };
+
+    var panorama4 = {
+        "title": "中央广场",
+        "type": "equirectangular",
+        "panorama": "https://s2.loli.net/2024/03/27/YrRgDBPoX7FKNzv.jpg",
+        "yaw": 0, // 定义初始视角的水平角度
+        "pitch": 0, // 定义初始视角的垂直角度
+        "hotSpots": [
+            {
+                "pitch": 0,
+                "yaw": 140,
+                "type": "scene",
+                "text": "后退",
+                "sceneId": "scene2"
+            },
+            {
+                "pitch": 0,
+                "yaw": 0,
+                "type": "scene",
+                "text": "进入",
+                "sceneId": "scene5"
+            },
+            {
+                "pitch": 0,
+                "yaw": -90,
+                "type": "scene",
+                "text": "雷锋塑像",
+                "sceneId": "scene6"
+            },
+        ]
+    };
+
+    var panorama5 = {
+        "title": "馆内",
+        "type": "equirectangular",
+        "panorama": "https://s2.loli.net/2024/03/27/HcumqMXw76NpdDs.jpg",
+        "yaw": 0, // 定义初始视角的水平角度
+        "pitch": 0, // 定义初始视角的垂直角度
+        "hotSpots": [
+            {
+                "pitch": 0,
+                "yaw": 172,
+                "type": "scene",
+                "text": "后退",
+                "sceneId": "scene4"
+            },
+        ]
+    };
+
+    var panorama6 = {
+        "title": "雷锋塑像",
+        "type": "equirectangular",
+        "panorama": "https://s2.loli.net/2024/03/27/5BOH2uG1IRMkVKh.jpg",
+        "yaw": 0, // 定义初始视角的水平角度
+        "pitch": 0, // 定义初始视角的垂直角度
+        "hotSpots": [
+            {
+                "pitch": 0,
+                "yaw": 180,
+                "type": "scene",
+                "text": "后退",
+                "sceneId": "scene4"
+            },
+            {
+                "pitch": 0,
+                "yaw": 30,
+                "type": "scene",
+                "text": "前进",
+                "sceneId": "scene7"
+            },
+
+        ]
+    };
+
+    var panorama7 = {
+        "title": "游步道三",
+        "type": "equirectangular",
+        "panorama": "https://s2.loli.net/2024/03/27/JCrkEodlbYqhQnw.jpg",
+        "yaw": 0, // 定义初始视角的水平角度
+        "pitch": 0, // 定义初始视角的垂直角度
+        "hotSpots": [
+            {
+                "pitch": 0,
+                "yaw": 180,
+                "type": "scene",
+                "text": "雷锋塑像",
+                "sceneId": "scene6"
+            },
+            {
+                "pitch": 0,
+                "yaw": 90,
+                "type": "scene",
+                "text": "志愿者之家",
+                "sceneId": "scene8"
+            },
+            {
+                "pitch": 0,
+                "yaw": -90,
+                "type": "scene",
+                "text": "元帅广场",
+                "sceneId": "scene9"
+            },
+            {
+                "pitch": 0,
+                "yaw": 45,
+                "type": "scene",
+                "text": "雷锋故居",
+                "sceneId": "scene10"
+            },
+
+        ]
+    };
+
+    var panorama8 = {
+        "title": "志愿者之家",
+        "type": "equirectangular",
+        "panorama": "https://s2.loli.net/2024/03/27/2hWNaIcHjCpqoUv.jpg",
+        "yaw": 0, // 定义初始视角的水平角度
+        "pitch": 0, // 定义初始视角的垂直角度
+        "hotSpots": [
+            {
+                "pitch": 0,
+                "yaw": -90,
+                "type": "scene",
+                "text": "后退",
+                "sceneId": "scene7"
+            },
+        ]
+    };
+
+    var panorama9 = {
+        "title": "元帅广场",
+        "type": "equirectangular",
+        "panorama": "https://s2.loli.net/2024/03/27/JiBN3Ka1ej9Sh5o.jpg",
+        "yaw": -90, // 定义初始视角的水平角度
+        "pitch": 0, // 定义初始视角的垂直角度
+        "hotSpots": [
+            {
+                "pitch": 0,
+                "yaw": 90,
+                "type": "scene",
+                "text": "后退",
+                "sceneId": "scene7"
+            },
+        ]
+    };
+
+    var panorama10 = {
+        "title": "雷锋故居",
+        "type": "equirectangular",
+        "panorama": "https://s2.loli.net/2024/03/27/N3Qg9Wt2TrymBZR.jpg",
+        "yaw": 0, // 定义初始视角的水平角度
+        "pitch": 0, // 定义初始视角的垂直角度
+        "hotSpots": [
+            {
+                "pitch": 0,
+                "yaw": 172,
+                "type": "scene",
+                "text": "后退",
+                "sceneId": "scene7"
+            },
+            {
+                "pitch": 2,
+                "yaw": 3,
+                "type": "scene",
+                "text": "进入",
+                "sceneId": "scene11"
+            },
+     ]
+    };
+
+    var panorama11 = {
+        "title": "雷锋故居内部",
+        "type": "equirectangular",
+        "panorama": "https://s2.loli.net/2024/03/27/PFAgc2e74WINxl8.jpg",
+        "yaw": 0, // 定义初始视角的水平角度
+        "pitch": 0, // 定义初始视角的垂直角度
+        "hotSpots": [
+            {
+                "pitch": 0,
+                "yaw": 135,
+                "type": "scene",
+                "text": "后退",
+                "sceneId": "scene10"
+            },
+        ]
+    };
 
 
-                <div class="c2">
-                    <h1><b>玩在红色潇湘</b></h1>
-                    <ul>
-                        <li>
-                            <img src="images/1.png" alt="">
-                            <p>景区景点</p>
-                        </li>
-                        <li>
-                            <img src="images/2.png" alt="">
-                            <p>特色美食</p>
-                        </li>
-                        <li>
-                            <img src="images/3.png" alt="">
-                            <p>酒店住宿</p>
-                        </li>
-                        <li>
-                            <img src="images/4.png" alt="">
-                            <p>特产购物</p>
-                        </li>
-                        <li>
-                            <img src="images/5.png" alt="">
-                            <p>娱乐休闲</p>
-                        </li>
-                        <li>
-                            <img src="images/6.png" alt="">
-                            <p>风俗节庆</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    var viewer = pannellum.viewer('panorama', {
+        "scenes": {
+            "scene1": panorama1,
+            "scene2": panorama2,
+            "scene4": panorama4,
+            "scene5": panorama5,
+            "scene6": panorama6,
+            "scene7": panorama7,
+            "scene8": panorama8,
+            "scene9": panorama9,
+            "scene10": panorama10,
+            "scene11": panorama11
+        },
+        "autoLoad": true
+    });
 
-        <div class="bottom">
-            <p><b>沉浸式湖南红色景点网</b></p>
-        </div>
-    </div>
+    viewer.loadScene('scene1');
+
+
+
+    // 添加按钮点击事件
+    document.getElementById('backToScene1').addEventListener('click', function() {
+        viewer.loadScene('scene1');
+    });
+</script>
+
 </body>
-
 </html>
